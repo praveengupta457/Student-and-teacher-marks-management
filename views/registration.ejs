@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="/Style/registration.css" />
+  </head>
+  <body>
+    <form action="/registration" method="post" id="registrationForm">
+      <h2>Registration Form</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <label for="confirm_password">Confirm Password:</label>
+      <input
+        type="password"
+        id="confirm_password"
+        name="confirm_password"
+        required
+      />
+
+      <label for="profession">Please Select your Profession:</label>
+      <select id="profession" name="profession" required>
+        <option value="Teacher">Teacher</option>
+        <option value="Student">Student</option>
+      </select>
+      <br /><br />
+      <button type="submit">Register</button>
+    </form>
+
+    <script>
+      // Add event listener to the form
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (e) {
+          const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirm_password").value;
+
+          // Check if passwords match
+          if (password !== confirmPassword) {
+            e.preventDefault(); // Prevent form submission
+            alert("Passwords do not match!");
+          } else {
+            alert("User Registered Successfully!");
+          }
+        });
+    </script>
+  </body>
+</html>

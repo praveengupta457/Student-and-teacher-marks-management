@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/Style/aggregate.css" />
+  </head>
+  <body>
+    <h1>Aggregated Data</h1>
+
+    <p>Average Total Marks: <%= average.toFixed(2) %></p>
+
+    <h2>Top Two Students</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Total Marks</th>
+      </tr>
+      <% topTwoStudents.forEach(student => { %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.total %></td>
+      </tr>
+      <% }) %>
+    </table>
+
+    <h2>Above Average Students</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Total Marks</th>
+      </tr>
+      <% aboveAverageStudents.forEach(student => { %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.total %></td>
+      </tr>
+      <% }) %>
+    </table>
+
+    <h2>Below Average Students</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Total Marks</th>
+      </tr>
+      <% belowAverageStudents.forEach(student => { %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.total %></td>
+      </tr>
+      <% }) %>
+    </table>
+
+    <h2>All Students</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Total Marks</th>
+      </tr>
+      <% allStudents.forEach(student => { %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.total %></td>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>

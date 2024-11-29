@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard</title>
+  <link rel="stylesheet" href="/Style/teacher-dashboard.css">
+</head>
+<body>
+  <h1>Teacher Dashboard</h1>
+  <h1>Welcome, <%= username %></h1>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Hindi</th>
+      <th>English</th>
+      <th>Science</th>
+      <th>Mathematics</th>
+      <th>Computer</th>
+      <th>Total</th>
+    </tr>
+    <% if (vidyarthi && vidyarthi.length > 0) { %>
+      <% vidyarthi.forEach(student => { %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.marks.Hindi %></td>
+        <td><%= student.marks.English %></td>
+        <td><%= student.marks.Science %></td>
+        <td><%= student.marks.Mathematics %></td>
+        <td><%= student.marks.Computer %></td>
+        <td><%= student.marks.total %></td>
+      </tr>
+    <% }) %>
+    <% } else { %>
+      <tr>
+        <td colspan="7">No students data available</td>
+      </tr>
+    <% } %>
+
+    <tr><th><a href="/aggregate" <input type="submit" value="Aggregate">Aggregate</th></tr>
+
+  </table>
+</body>
+</html>
